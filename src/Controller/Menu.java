@@ -1,8 +1,15 @@
 package Controller;
 
+import DAO.CategoriaDAO;
+import DAO.Cuenta_SDAO;
+import DAO.SubCategoriaDAO;
+import Model.Main;
+import Model.Subcategoria;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
+
+import java.io.IOException;
 
 public class Menu {
 
@@ -17,7 +24,11 @@ public class Menu {
 
     @FXML
     void showBtn1(MouseEvent event) {
-        System.out.println("Mostrar Categorías");
+        try {
+            Main.setFXML("ShowCat","Categorias");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML

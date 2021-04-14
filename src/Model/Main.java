@@ -21,7 +21,7 @@ public class Main extends Application {
         scene = new Scene(loadFXML("Root"));
         stage = primaryStage;
         primaryStage.setTitle("CashFlow");
-        primaryStage.getIcons().add(new Image("imgs/takagi.jpg"));
+        primaryStage.getIcons().add(new Image("imgs/doge.png"));
         primaryStage.setScene(scene);
         primaryStage.show();
 
@@ -36,6 +36,7 @@ public class Main extends Application {
         stage.sizeToScene();
         stage.centerOnScreen();
         stage.setTitle(title);
+        stage.setResizable(false);
     }
 
     private static Parent loadFXML(String fxml) throws IOException {

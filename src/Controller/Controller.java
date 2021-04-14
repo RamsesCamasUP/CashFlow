@@ -31,7 +31,7 @@ public class Controller {
         UserDAO userDAO = new UserDAO();
         Usuario user = null;
         if (!txt_username.getText().isEmpty()){
-            user = userDAO.getUser(txt_username.getText());
+            user = userDAO.getUser(txt_username.getText().trim());
             System.out.println(user);
         }else {
             txt_error.setText("Ingrese un usuario");
