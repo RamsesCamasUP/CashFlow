@@ -39,6 +39,26 @@ public class SubCategoriaDAO {
         return s_cat;
     }
 
+    public boolean insertSubCat(Subcategoria subCat){
+        boolean result = false;
+        if(connection!=null){
+            String sql = "insert into subcategoria values (?,?)";
+            try {
+                PreparedStatement statement = connection.prepareStatement(sql);
+                statement.setInt(1,subCat.getId());
+                statement.setString(2,subCat.getNombre());
+                statement.setInt(3,subCat.getIdCategoria());
+                statement.executeUpdate();
+                result = true;
+            } catch (SQLException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }
+
+        return result;
+    }
+
     public ArrayList<Subcategoria> getAllSubC(){
         ArrayList<Subcategoria> subcategorias = new ArrayList<>();
         if(connection!=null){
